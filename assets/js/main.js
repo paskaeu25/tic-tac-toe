@@ -97,7 +97,7 @@ class TicTacToe {
       currentPlayer: this.currentPlayer,
     };
 
-    localStorage.setItem('gameState', gameState);
+    localStorage.setItem('gameState', JSON.stringify(gameState));
   }
 }
 
