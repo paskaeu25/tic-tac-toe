@@ -23,6 +23,8 @@ class TicTacToe {
     });
     // Add an event listener to the restart button to trigger the restartGame method when clicked.
     this.restartBtn.addEventListener('click', () => this.restartGame());
+    // Add an event listener to load game state when the page loads
+    window.addEventListener('load', () => this.loadGameState());
   }
 
   // Implement a method (e.g., handleClick) to respond to user clicks on the cells.
@@ -46,6 +48,8 @@ class TicTacToe {
       // Switch to the next player's turn.
       this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
     }
+
+    this.saveGameState();
   }
 
   // Implement a method (e.g., checkWin) to check if a player has won.
@@ -89,6 +93,8 @@ class TicTacToe {
     this.messageEl.textContent = '';
     // Reset the game-over flag to false.
     this.gameOver = false;
+
+    this.saveGameState();
   }
 
   saveGameState() {
@@ -98,6 +104,15 @@ class TicTacToe {
     };
 
     localStorage.setItem('gameState', JSON.stringify(gameState));
+  }
+
+  loadGameState() {
+    const savedState = localStorage.getItem('gameState');
+    if (savedState) {
+      const gameState = JSON.parse(savedState);
+      this.board = gameState.board;
+      this.currentPlayer = gameState.currentPlayer;
+    }
   }
 }
 
