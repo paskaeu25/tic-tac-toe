@@ -11,6 +11,7 @@ class TicTacToe {
     this.cells = document.querySelectorAll('.cell');
     this.messageEl = document.querySelector('#message');
     this.restartBtn = document.querySelector('#restart');
+    this.resetScoreBtn = document.querySelector('#resetScore');
     this.player1ScoreEl = document.querySelector('#player1Score');
     this.player2ScoreEl = document.querySelector('#player2Score');
 
@@ -21,6 +22,7 @@ class TicTacToe {
       cell.addEventListener('click', () => this.handleClick(index));
     });
     this.restartBtn.addEventListener('click', () => this.restartGame());
+    this.resetScoreBtn.addEventListener('click', () => this.resetScore());
     window.addEventListener('load', () => this.loadGameState());
   }
 
@@ -80,6 +82,14 @@ class TicTacToe {
     this.gameOver = false;
 
     this.saveGameState();
+  }
+
+  resetScore() {
+    this.player1Score = 0;
+    this.player2Score = 0;
+
+    this.saveGameState();
+    this.updateScoreUI();
   }
 
   saveGameState() {
