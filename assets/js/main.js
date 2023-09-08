@@ -4,6 +4,7 @@ class TicTacToe {
   constructor() {
     this.board = new Array(9).fill(null);
     this.currentPlayer = 'X';
+    this.winner = null;
     this.player1Score = 0;
     this.player2Score = 0;
 
@@ -35,8 +36,9 @@ class TicTacToe {
     if (this.checkWin()) {
       this.messageEl.textContent = `${this.currentPlayer} wins!`;
       this.gameOver = true;
+      this.winner = this.currentPlayer;
 
-      this.updateScore(this.currentPlayer);
+      this.updateScore(this.winner);
       this.updateScoreUI();
     } else if (this.board.every((cell) => cell !== null)) {
       this.messageEl.textContent = `It's a draw!`;
@@ -80,6 +82,7 @@ class TicTacToe {
     this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
     this.messageEl.textContent = '';
     this.gameOver = false;
+    this.winner = null;
 
     this.saveGameState();
   }
