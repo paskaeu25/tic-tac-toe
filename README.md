@@ -1,4 +1,5 @@
 # Tic Tac Toe Game
+![main-image](https://github.com/paskaeu25/tic-tac-toe/assets/60621475/5e363193-16ac-4a6a-8152-b599ace32d23)
 
 A simple web-based Tic Tac Toe game implemented in JavaScript using Object-Oriented Programming (OOP) principles. This project allows two players to take turns, keeps track of scores, and persists game state across page reloads using localStorage.
 
@@ -23,20 +24,10 @@ You can play the game live here: [Tic Tac Toe Demo]([https://your-demo-link-here
 5. Use the "Restart Game" button to start a new game.
 6. Use the "Reset Scores" button to clear player scores.
 
-## Usage
 
-You can clone this repository and run the game locally:
-
-```bash
-git clone https://github.com/your-username/tic-tac-toe-game.git
-cd tic-tac-toe-game
-```
-
-Open the `index.html` file in your browser to play the game.
 
 ## Screenshots
 
-Include screenshots or GIFs of your game here to visually showcase it.
 
 ## Technologies Used
 
