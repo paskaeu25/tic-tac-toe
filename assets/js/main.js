@@ -75,7 +75,6 @@ class TicTacToe {
   restartGame() {
     this.board = new Array(9).fill(null);
     this.cells.forEach((cell) => (cell.textContent = ''));
-    // change current player to other one
     this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
     this.messageEl.textContent = '';
     this.gameOver = false;

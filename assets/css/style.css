@@ -43,6 +43,10 @@
   background-color: rgb(25, 83, 190);
 }
 
+.btn-reset {
+  background-color: rgb(177, 15, 15);
+}
+
 .message {
   margin: 1rem;
   color: rgb(30, 148, 17);
