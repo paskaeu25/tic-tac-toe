@@ -4,11 +4,15 @@ class TicTacToe {
   constructor() {
     this.board = new Array(9).fill(null);
     this.currentPlayer = 'X';
+    this.player1Score = 0;
+    this.player2Score = 0;
 
     // Target DOM elements
     this.cells = document.querySelectorAll('.cell');
     this.messageEl = document.querySelector('#message');
     this.restartBtn = document.querySelector('#restart');
+    this.player1ScoreEl = document.querySelector('#player1Score');
+    this.player2ScoreEl = document.querySelector('#player2Score');
 
     this.gameOver = false;
 
@@ -103,6 +107,9 @@ class TicTacToe {
     this.cells.forEach((cell, index) => {
       cell.textContent = this.board[index] || '';
     });
+
+    this.player1ScoreEl.textContent = this.player1Score;
+    this.player2ScoreEl.textContent = this.player2Score;
   }
 }
 
