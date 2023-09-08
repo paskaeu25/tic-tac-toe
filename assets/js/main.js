@@ -33,6 +33,9 @@ class TicTacToe {
     if (this.checkWin()) {
       this.messageEl.textContent = `${this.currentPlayer} wins!`;
       this.gameOver = true;
+
+      this.updateScore(this.currentPlayer);
+      this.updateScoreUI();
     } else if (this.board.every((cell) => cell !== null)) {
       this.messageEl.textContent = `It's a draw!`;
       this.gameOver = true;
@@ -85,6 +88,7 @@ class TicTacToe {
       currentPlayer: this.currentPlayer,
       message: this.messageEl.textContent,
       gameOver: this.gameOver,
+      scores: [this.player1Score, this.player2Score],
     };
 
     localStorage.setItem('gameState', JSON.stringify(gameState));
@@ -107,7 +111,17 @@ class TicTacToe {
     this.cells.forEach((cell, index) => {
       cell.textContent = this.board[index] || '';
     });
+  }
 
+  updateScore(player) {
+    if (player === 'X') {
+      this.player1Score++;
+    } else if (player === 'O') {
+      this.player2Score++;
+    }
+  }
+
+  updateScoreUI() {
     this.player1ScoreEl.textContent = this.player1Score;
     this.player2ScoreEl.textContent = this.player2Score;
   }
