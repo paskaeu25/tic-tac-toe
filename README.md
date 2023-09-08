@@ -6,7 +6,7 @@ A simple web-based Tic Tac Toe game implemented in JavaScript using Object-Orien
 
 ## Demo
 
-You can play the game live here: [Tic Tac Toe Demo]([https://paskaeu25.github.io/tic-tac-toe/])
+You can play the game live here: [Tic Tac Toe Demo](https://paskaeu25.github.io/tic-tac-toe/)
 
 ## Features
 
