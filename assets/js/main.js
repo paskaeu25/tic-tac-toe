@@ -102,9 +102,12 @@ class TicTacToe {
       this.currentPlayer = gameState.currentPlayer;
       this.messageEl.textContent = gameState.message;
       this.gameOver = gameState.gameOver;
+      this.player1Score = gameState.scores[0];
+      this.player2Score = gameState.scores[1];
     }
 
     this.updateUI();
+    this.updateScoreUI();
   }
 
   updateUI() {
